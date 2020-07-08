@@ -6,7 +6,7 @@ services:
       context: './php/'          
       network: 'host'
       args:
-       PHP_VERSION: ${PHP_VERSION}  
+       PHP_VERSION: ${PHP_VERSION}
     volumes:
       - ./php/php.ini:/usr/local/etc/php/conf.d/custom.ini
       - ${PROJECT_ROOT}/:/var/www/html/
@@ -59,6 +59,13 @@ services:
     volumes:
       - mariadbdata:/bitnami
     container_name: phpMyadmin_${MYSQL_VERSION}     
+  composer_installation:
+    container_name: composer_isntall
+    image: composer
+    volumes:
+      - ${PROJECT_ROOT}/calculadora:/app
+    command: composer install --ignore-platform-reqs
+
 volumes:
   mariadbdata:
  
