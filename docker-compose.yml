@@ -3,7 +3,7 @@ services:
   php:
     restart: always
     build: 
-      context: './php/'          
+      context: './php/'
       network: 'host'
       args:
        PHP_VERSION: ${PHP_VERSION}
