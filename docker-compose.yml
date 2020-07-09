@@ -63,7 +63,7 @@ services:
       image: composer:1.9
       command: ["composer", "install"]
       volumes:
-        - ${PROJECT_ROOT}/esp32-api:/app    
+        - ${PROJECT_ROOT}/calculadora:/app    
 volumes:
   mariadbdata:
  
