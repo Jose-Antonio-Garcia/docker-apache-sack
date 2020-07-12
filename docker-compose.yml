@@ -60,12 +60,11 @@ services:
       - mariadbdata:/bitnami
     container_name: phpMyadmin_${MYSQL_VERSION}     
   composer_installation:
-    container_name: composer_isntall
-    image: composer
-    volumes:
-      - ${PROJECT_ROOT}/calculadora:/app
-    command: composer install --ignore-platform-reqs
-
+      container_name: composer_isntall
+      image: composer
+      volumes:
+        - ${PROJECT_ROOT}/calculadora:/app
+      command: composer install --ignore-platform-reqs
 volumes:
   mariadbdata:
  
