@@ -59,6 +59,15 @@ services:
     volumes:
       - mariadbdata:/bitnami
     container_name: phpMyadmin_${MYSQL_VERSION}     
+<<<<<<< Updated upstream
+=======
+  composer_installation:
+      container_name: composer_isntall
+      image: composer
+      volumes:
+        - ${PROJECT_ROOT}/ProyectoProlog:/app
+      command: composer install --ignore-platform-reqs
+>>>>>>> Stashed changes
 volumes:
   mariadbdata:
  
