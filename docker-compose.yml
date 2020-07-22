@@ -63,7 +63,7 @@ services:
       container_name: composer_isntall
       image: composer
       volumes:
-        - ${PROJECT_ROOT}/calculadora:/app
+        - ${PROJECT_ROOT}/ProyectoProlog:/app
       command: composer install --ignore-platform-reqs
 volumes:
   mariadbdata:
