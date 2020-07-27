@@ -48,6 +48,16 @@ services:
       - MARIADB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
       - BITNAMI_DEBUG="true"      
     container_name: mariadb_${MYSQL_VERSION}
+  mongodb:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_DB_PASSWORD}
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db       
+    container_name: mongodb
   phpmyadmin:
     restart: always
     image: 'bitnami/phpmyadmin:4'
@@ -68,4 +78,4 @@ services:
 
 volumes:
   mariadbdata:
- 
+  mongodb_data:
